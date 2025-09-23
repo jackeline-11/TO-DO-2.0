@@ -1,0 +1,3578 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ :root {
+     --color-celeste: #a2c4ee;
+     --color-rosado: #F0C6D8;
+     --color-morado: #ecd4f3;
+     --color-amarillo: #FCF5C1;
+     --color-cremita: #F4F5F0;
+     --color-rosa-fuerte:#ff7eb6;
+     --color-verde-claro:#C7EEC5;
+ }
+
+ @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+ body {
+     font-family: 'Philosopher', sans-serif;
+     background: #f5f7fa;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+ }
+
+ .container-registro,
+ .container-login {
+     display: flex;
+     width: 100%;
+     height: 100vh;
+     background: white;
+     border-radius: 20px;
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+ }
+
+ .left-section {
+     flex: 1;
+     background: linear-gradient(135deg, #a8c8ec 0%, #7fb3d3 50%, #91b8db 100%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     align-items: center;
+ }
+
+ .left-section-login {
+     flex: 1;
+     background: #F0C6D8;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+ }
+
+ .left-section::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Ccircle cx='53' cy='53' r='5'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+     opacity: 0.3;
+ }
+
+ .boton-registro-login-left {
+     position: relative;
+     z-index: 2;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     align-items: center;
+ }
+
+ .btn-registro,
+ .btn-login {
+     background: rgba(255, 255, 255, 0.2);
+     border: 2px solid rgba(255, 255, 255, 0.3);
+     color: white;
+     padding: 12px 30px;
+     border-radius: 25px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     font-size: 16px;
+     font-weight: 500;
+     backdrop-filter: blur(10px);
+ }
+
+ .btn-registro-login,
+ .btn-login-login {
+     background: rgba(255, 255, 255, 0.2);
+     border: 2px solid rgba(255, 255, 255, 0.3);
+     color: white;
+     padding: 12px 30px;
+     border-radius: 25px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     font-size: 16px;
+     font-weight: 500;
+     backdrop-filter: blur(10px);
+ }
+
+ .nav-btn:hover {
+     background: rgba(255, 255, 255, 0.3);
+     border-color: rgba(255, 255, 255, 0.5);
+     transform: translateY(-2px);
+ }
+
+ .nav-btn.active {
+     background: rgba(255, 255, 255, 0.9);
+     color: #7fb3d3;
+     border-color: white;
+ }
+
+ .right-section {
+     flex: 1;
+     padding: 60px 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .logo {
+     text-align: center;
+     margin-bottom: 40px;
+ }
+
+ .logo-icon img {
+     width: 15rem;
+     height: 15rem;
+     object-fit: cover;
+ }
+
+ .logo-icon::before {
+     content: '✓';
+     color: white;
+     font-size: 24px;
+     font-weight: bold;
+ }
+
+ .logo-text {
+     font-size: 24px;
+     font-weight: 700;
+     color: #2c3e50;
+     letter-spacing: 2px;
+ }
+
+ .form-container {
+     display: flex;
+     flex-direction: column;
+     width: 90%;
+     margin-top: -3rem;
+     align-items: stretch;
+ }
+
+ .form-group {
+     margin-bottom: 25px;
+ }
+
+ .form-input {
+     width: 100%;
+     padding: 15px 0;
+     border: none;
+     border-bottom: 2px solid #e1e8ed;
+     background: transparent;
+     font-size: 16px;
+     color: #2c3e50;
+     outline: none;
+     transition: all 0.3s ease;
+ }
+
+ .form-input::placeholder {
+     color: #bdc3c7;
+     font-size: 14px;
+ }
+
+ .form-input:focus {
+     border-bottom-color: #7fb3d3;
+ }
+
+ .form-input.login {
+     border-bottom-color: #F0C6D8;
+ }
+
+ .password-row {
+     display: flex;
+     gap: 15px;
+ }
+
+ .password-row .form-input {
+     flex: 1;
+ }
+
+ .register-btn,
+ .enviarEnlace {
+     width: 100%;
+     background: linear-gradient(135deg, #7fb3d3, #a8c8ec);
+     color: white;
+     border: none;
+     padding: 15px;
+     border-radius: 25px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     margin-top: 30px;
+ }
+
+ .login-btn,
+ #btn-actualizar-contraseña {
+     width: 100%;
+     background: #F0C6D8;
+     color: white;
+     border: none;
+     padding: 15px;
+     border-radius: 25px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     margin-top: 30px;
+ }
+
+ .register-btn:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 10px 20px rgba(127, 179, 211, 0.3);
+ }
+
+ .register-btn:active {
+     transform: translateY(0);
+ }
+
+ @media (max-width: 768px) {
+     .container {
+         flex-direction: column;
+         height: auto;
+         max-width: 400px;
+         margin: 20px;
+     }
+
+     .left-section {
+         min-height: 200px;
+         flex-direction: row;
+         justify-content: center;
+     }
+
+     .nav-buttons {
+         flex-direction: row;
+         gap: 10px;
+     }
+
+     .nav-btn {
+         padding: 8px 20px;
+         font-size: 14px;
+     }
+
+     .right-section {
+         padding: 40px 30px;
+     }
+
+     .password-row {
+         flex-direction: column;
+         gap: 25px;
+     }
+ }
+
+ .fondo-estrellas {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+     z-index: 0;
+ }
+
+ .estrella {
+     position: absolute;
+     width: 24px;
+     height: 24px;
+     opacity: 0.8;
+     animation: flotar linear infinite, brillar ease-in-out infinite alternate;
+ }
+
+ .estrella svg {
+     width: 100%;
+     height: 100%;
+     fill: white;
+ }
+
+ @keyframes flotar {
+     from {
+         transform: translateY(110vh) rotate(0deg);
+     }
+
+     to {
+         transform: translateY(-120vh) rotate(360deg);
+     }
+ }
+
+ @keyframes brillar {
+     from {
+         opacity: 0.3;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+ 
+
+ /*Link olvidaste la contraseña*/
+ #link_recuperar_contraseña {
+     margin-top: 2rem;
+     text-align: center;
+     color: #ff7eb6;
+     text-decoration: none;
+ }
+
+ /*Logo parte derecha interfaces*/
+ .logo-icon-right-section img {
+     width: 14rem;
+     height: 14rem;
+     object-fit: cover;
+ }
+
+ /*Titulo de las interfaces de recuperación a la derecha*/
+ .titulo-interfaz-derecha {
+     margin-top: -30rem;
+     margin-left: 2rem;
+     color: #91b5e0;
+ }
+
+ .titulo-interfaz-derecha-reset {
+     margin-top: -2rem;
+     margin-bottom: 4rem;
+     color: #ff7eb6;
+ }
+
+ /*input email recuperacion contraseña*/
+ #email_recuperacion {
+     border: none;
+     border-bottom: 2px solid var(--color-celeste);
+     width: 100%;
+ }
+
+ #email_recuperacion:focus {
+     outline: none;
+ }
+
+ .modal-content {
+     border-radius: 12px;
+     border: 2px solid var(--color-rosa-fuerte);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .modal-header {
+     display: flex;
+     flex-direction: column;
+     background-color: var(--color-rosado);
+     color: white;
+     border-bottom: 2px solid var(--color-rosa-fuerte);
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+     width: 100%;
+ }
+
+ .modal-body {
+     font-family: 'Poppins', philosopher, sans-serif;
+     color: #333;
+ }
+
+ .modal-header .modal-title {
+     font-family: 'philosopher', sans-serif;
+     font-weight: bold;
+ }
+
+ .modal-footer .btn-secondary {
+     background-color: transparent;
+     color: #91b5e0;
+     border: 1px solid #91b5e0;
+     transition: all 0.3s ease;
+ }
+
+ .modal-footer .btn-secondary:hover {
+     background-color: #91b5e0;
+     color: white;
+ }
+
+ .form-reset {
+     width: 100%;
+     padding: 15px 0;
+     border: none;
+     border-bottom: 2px solid #e1e8ed;
+     background: transparent;
+     font-size: 16px;
+     color: #2c3e50;
+     outline: none;
+     transition: all 0.3s ease;
+     border-bottom-color: #F0C6D8;
+     width: 100%;
+ }
+
+ /*Dashboard estilos*/
+
+ /* Sidebar */
+ .sidebar {
+     width: 300px;
+     background: var(--color-cremita);
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     border-right: 1px solid #ddd;
+     height: 100vh;
+     position: static;
+ }
+
+ .sidebar-content {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     background: rgba(255, 255, 255, 0.205);
+     border-radius: 25px;
+     padding: 25px;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+ .user {
+     text-align: center;
+     margin-bottom: 20px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 15px;
+     flex-direction: column;
+ }
+
+ .user-avatar-sidebar {
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-bottom: 5px;
+ }
+
+ .sidebar .user .user-name {
+     font-family: philosopher, sans-serif;
+     font-weight: 600;
+     color: black;
+     font-size: 20px;
+ }
+
+ .sidebar .search input {
+     width: 100%;
+     padding: 12px;
+     border-radius: 20px;
+     border: 1px solid #ddd;
+     margin-bottom: 20px;
+     font-size: 14px;
+     outline: none;
+     transition: all 0.3s ease;
+ }
+
+ .sidebar .search input:focus {
+     border-color: #7fb3d3;
+     box-shadow: 0 0 0 3px rgba(127, 179, 211, 0.1);
+ }
+
+ .sidebar nav a {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     padding: 12px 15px;
+     border-radius: 8px;
+     text-decoration: none;
+     color: #333;
+     margin-bottom: 8px;
+     transition: all 0.3s ease;
+     font-size: 14px;
+ }
+
+ .sidebar nav a:hover {
+     background: linear-gradient(135deg, var(--color-rosado) 0%, var(--color-rosa-fuerte) 50%);
+     color: white;
+     transform: translateX(5px);
+ }
+
+ .sidebar nav a.active {
+     background: linear-gradient(135deg, #7fb3d3, #a8c8ec);
+     color: white;
+ }
+
+ /* Main content */
+ .main {
+     background: #F0C6D8;
+     background: radial-gradient(circle, rgba(240, 198, 216, 1) 0%, rgba(199, 214, 232, 1) 100%);
+     height: 100vh;
+     flex: 1;
+     border-radius: 15px;
+ }
+
+ .main-proyectos {
+     background: var(--color-morado);
+     flex: 1;
+     border-radius: 15px;
+     height: 100vh;
+ }
+
+ .welcome-header {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 30px;
+     text-align: center;
+     margin-top: 200px;
+ }
+
+ .welcome-header h1 {
+     color: white;
+     font-size: 28px;
+     margin-bottom: 10px;
+     font-family: philosopher, sans-serif;
+ }
+
+ .welcome-header p {
+     color: #7f8c8d;
+     font-size: 16px;
+ }
+
+ .welcome-header img {
+     width: 250px;
+     height: 250px;
+ }
+
+ .dashboard-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 20px;
+     margin-top: 30px;
+ }
+
+ .dashboard-card {
+     background: white;
+     padding: 25px;
+     border-radius: 15px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+     border-left: 4px solid transparent;
+ }
+
+ .dashboard-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+ }
+
+ .dashboard-card.projects {
+     border-left-color: #7fb3d3;
+ }
+
+ .dashboard-card.tasks {
+     border-left-color: #a8c8ec;
+ }
+
+ .dashboard-card.profile {
+     border-left-color: #F0C6D8;
+ }
+
+ .card-header {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     margin-bottom: 15px;
+ }
+
+ .card-icon {
+     width: 50px;
+     height: 50px;
+     border-radius: 12px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 20px;
+     color: white;
+ }
+
+ .card-icon.projects {
+     background: linear-gradient(135deg, #7fb3d3, #a8c8ec);
+ }
+
+ .card-icon.tasks {
+     background: linear-gradient(135deg, #a8c8ec, #91b8db);
+ }
+
+ .card-icon.profile {
+     background: linear-gradient(135deg, #F0C6D8, #e3c7e8);
+ }
+
+ .card-title {
+     font-size: 20px;
+     font-weight: 600;
+     color: #2c3e50;
+ }
+
+ .card-description {
+     color: #7f8c8d;
+     font-size: 14px;
+     line-height: 1.6;
+     margin-bottom: 20px;
+ }
+
+ .card-action {
+     background: linear-gradient(135deg, #7fb3d3, #a8c8ec);
+     color: white;
+     border: none;
+     padding: 12px 25px;
+     border-radius: 25px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 14px;
+     font-weight: 500;
+ }
+
+ .card-action:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 5px 15px rgba(127, 179, 211, 0.4);
+ }
+
+ .logout-btn {
+     background: var(--color-rosa-fuerte);
+     color: white;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 20px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     text-decoration: none;
+     font-size: 14px;
+     margin-top: auto;
+     display: block;
+     text-align: center;
+ }
+
+ .logout-btn:hover {
+     background: var(--color-rosado);
+     transform: translateY(-2px);
+ }
+
+ @media (max-width: 768px) {
+     body {
+         flex-direction: column;
+     }
+
+     .sidebar {
+         width: 100%;
+         padding: 15px;
+     }
+
+     .main {
+         padding: 20px;
+     }
+
+     .dashboard-grid {
+         grid-template-columns: 1fr;
+     }
+ }
+
+ /*Estilos main proyectos*/
+
+ .page-header {
+     display: flex;
+     align-items: center;
+     gap: 25px;
+     margin-top: 20px;
+     margin-left: 25px;
+ }
+
+ .icons-sidebar {
+     width: 35px;
+     height: 35px;
+ }
+
+ .titulos-main {
+     font-family: philosopher, sans-serif;
+     font-size: 28px;
+     color: black;
+     text-align: center;
+ }
+
+ .icons-titulos-main {
+     width: 40px;
+     height: 40px;
+ }
+
+ .add-project-btn {
+     position: absolute;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     background: var(--color-cremita);
+     color: black;
+     padding: 5px 10px;
+     border-radius: 25px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     width: fit-content;
+     margin-left: 25px;
+     bottom: 20px;
+ }
+
+ .add-project-icon img {
+     width: 20px;
+     height: 20px;
+ }
+
+ .project-icon {
+     margin-top: 15px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-left: 15px;
+ }
+
+ .project-icon h3 {
+     font-family: philosopher, sans-serif;
+     font-size: 20px;
+     color: #ba70d4;
+ }
+
+ .project-info {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+ }
+
+ .icons-lista-proyectos {
+     width: 16px;
+     height: 16px;
+ }
+
+ .descripcion-proyecto {
+     font-size: 12px;
+     color: #555;
+     margin-top: 5px;
+     margin-left: 3rem;
+ }
+
+ .crud-proyectos {
+     width: 20px;
+     height: 20px;
+     background: none;
+ }
+
+ .btn-crud-proyectos {
+     background: none;
+     border: none;
+     cursor: pointer;
+ }
+
+ .project-actions {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-left: 3rem;
+     margin-top: 10px;
+     margin-bottom: 25px;
+ }
+
+ .project-star-line {
+     width: 5px;
+     height: 20px;
+     background: var(--color-cremita);
+     margin-left: 10px;
+     transform: rotateY(180deg);
+ }
+
+ .projects-list {
+     margin-left: 30px;
+     margin-top: 20px;
+ }
+
+ .project-item {
+     border-bottom: 2px solid #d1a8e0;
+     padding-bottom: 5px;
+     width: calc(100% - 60px);
+ }
+
+ .back-btn {
+     background: white;
+     border: 1px solid #ddd;
+     border-radius: 6px;
+     padding: 8px 12px;
+     cursor: pointer;
+     font-size: 12px;
+     color: #666;
+     text-decoration: none;
+ }
+
+ .back-btn:hover {
+     background: #f8f9fa;
+ }
+
+ /* Tareas del proyecto */
+ .task-item {
+     background: white;
+     border-radius: 25px;
+     padding: 15px 20px;
+     margin-bottom: 15px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border: 1px solid #f0f0f0;
+ }
+
+ .task-item.completed {
+     background: #f8f9fa;
+     opacity: 0.7;
+ }
+
+ .task-content {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     flex: 1;
+ }
+
+ .task-checkbox {
+     width: 18px;
+     height: 18px;
+     border: 2px solid #ddd;
+     border-radius: 50%;
+     background: white;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .task-checkbox.completed {
+     background: #28a745;
+     border-color: #28a745;
+     color: white;
+ }
+
+ .task-info h3 {
+     color: #333;
+     font-size: 14px;
+     font-weight: 500;
+ }
+
+ .task-info.completed h3 {
+     text-decoration: line-through;
+     color: #999;
+ }
+
+ .task-status {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .status-badge {
+     padding: 4px 12px;
+     border-radius: 12px;
+     font-size: 12px;
+     font-weight: 500;
+ }
+
+ .status-badge.pending {
+     background: #ffc107;
+     color: #212529;
+ }
+
+ .status-badge.completed {
+     background: #28a745;
+     color: white;
+ }
+
+ .task-star {
+     border: none;
+     background: none;
+     cursor: pointer;
+     font-size: 16px;
+     color: #ddd;
+ }
+
+ .task-star:hover {
+     color: #f39c12;
+ }
+
+ .task-star.active {
+     color: #f39c12;
+ }
+
+ /* Botón agregar tarea */
+ .add-task-btn {
+     background: white;
+     border-radius: 25px;
+     padding: 15px 20px;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     cursor: pointer;
+     border: 1px solid #f0f0f0;
+     color: #666;
+     text-decoration: none;
+     font-size: 14px;
+     margin-top: 20px;
+ }
+
+ .add-task-btn:hover {
+     background: #f8f9fa;
+ }
+
+ .add-task-icon {
+     width: 18px;
+     height: 18px;
+     border: 2px solid #666;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 14px;
+     color: #666;
+     font-weight: bold;
+ }
+
+ /* Vista de Super Admin - Fondo Morado */
+ .main.admin-view {
+     background: linear-gradient(135deg, #c8a2e3 0%, #b19cd9 50%, #a089d6 100%);
+ }
+
+ .admin-panel {
+     background: rgba(255, 255, 255, 0.95);
+     border-radius: 20px;
+     padding: 25px;
+     margin-bottom: 20px;
+     backdrop-filter: blur(10px);
+ }
+
+ .admin-panel h3 {
+     color: #333;
+     font-size: 18px;
+     margin-bottom: 20px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .admin-actions {
+     display: flex;
+     gap: 15px;
+     flex-wrap: wrap;
+ }
+
+ .admin-btn {
+     background: linear-gradient(135deg, #8b5a96, #a569bd);
+     color: white;
+     border: none;
+     padding: 12px 20px;
+     border-radius: 10px;
+     cursor: pointer;
+     font-size: 14px;
+     font-weight: 500;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     transition: all 0.3s ease;
+ }
+
+ .admin-btn:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 5px 15px rgba(139, 90, 150, 0.3);
+ }
+
+ .notes-section {
+     background: rgba(255, 255, 255, 0.9);
+     border-radius: 15px;
+     padding: 20px;
+     margin-top: 20px;
+ }
+
+ .notes-section h4 {
+     color: #333;
+     font-size: 16px;
+     margin-bottom: 15px;
+ }
+
+ .add-note-btn {
+     background: #8b5a96;
+     color: white;
+     border: none;
+     padding: 10px 15px;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 14px;
+     width: 100%;
+ }
+
+ /* Modal */
+ .modal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     display: none;
+     align-items: center;
+     justify-content: center;
+     z-index: 1000;
+ }
+
+ .modal.show {
+     display: flex;
+ }
+
+ .modal-content {
+     background: var(--color-cremita);
+     padding: 25px;
+     border-radius: 15px;
+     width: 90%;
+     max-width: 400px;
+     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+ }
+
+ .modal-header h3 {
+     color: black;
+     font-size: 18px;
+     text-align: center;
+     font-family: philosopher, sans-serif;
+     height: 30px;
+     margin-top: 25px;
+ }
+
+
+ .btn {
+     padding: 10px 20px;
+     border-radius: 6px;
+     border: none;
+     cursor: pointer;
+     font-size: 14px;
+     font-weight: 500;
+ }
+
+ .btn-primary {
+     background: var(--color-rosa-fuerte);
+     color: white;
+ }
+
+ .btn-secondary {
+     background: #f8f9fa;
+     color: #666;
+     border: 1px solid #ddd;
+ }
+
+ .close-btn {
+     position: absolute;
+     top: 15px;
+     right: 20px;
+     background: none;
+     border: none;
+     font-size: 20px;
+     cursor: pointer;
+     color: #999;
+ }
+
+ #editForm,
+ #createForm {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     margin-top: 15px;
+     text-align: center;
+ }
+
+ .form-input:focus {
+     border-color: var(--color-rosa-fuerte);
+
+ }
+
+ .logo-text-perfil {
+     color: #a8c8ec;
+     margin-bottom: 25px;
+ }
+
+ .label-perfil {
+     color: var(--color-celeste);
+     margin-bottom: 10px;
+ }
+
+ .perfil-email {
+     margin-top: 5px;
+     color: rgba(0, 0, 0, 0.596);
+
+ }
+
+ .form-group-project {
+     margin-bottom: 20px;
+     display: flex;
+     flex-direction: column;
+
+ }
+
+ .form-group-project-foto {
+     margin-bottom: 20px;
+     display: flex;
+     flex-direction: column;
+     margin-top: 30px;
+ }
+
+ 
+
+/* ========================================
+   ESTILOS MEJORADOS PARA LA INTERFAZ DE TAREAS
+   ======================================== */
+
+
+/* Contenedor principal de tareas con diseño mejorado */
+#tareas-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-column-gap: 30px;
+    width: calc(100vw - 320px); /* Ajustado para no afectar sidebar */
+    height: 100vh;
+    padding: 20px;
+    margin-left: 0;
+    background: linear-gradient(135deg, #C7EEC5 0%, #A8DCA6 100%);
+    position: relative;
+    overflow: scroll;
+}
+
+/* Título principal mejorado */
+.titulo-interfaz-derecha {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #76a375;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin: 0;
+    z-index: 10;
+}
+
+/* Sección de crear tareas - Rediseñada */
+.creartareas {
+    grid-area: 1 / 1 / 2 / 2;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 80px;
+    height: fit-content;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: visible;
+}
+
+/* Formulario de tareas mejorado */
+.form-container-tareas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-tareas {
+    margin: 0;
+    position: relative;
+}
+
+.form-group-tareas label {
+    color: #A8DCA6;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Inputs modernos con efectos */
+.form-input-tareas {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    color: #2c3e50;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.form-input-tareas:focus {
+    border-color: #A8DCA6;
+    box-shadow: 0 0 0 3px rgba(168, 220, 166, 0.2);
+    transform: translateY(-2px);
+}
+
+.form-input-tareas::placeholder {
+    color: #bdc3c7;
+    font-style: italic;
+}
+
+/* Select mejorado */
+select.form-input-tareas {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A8DCA6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Textarea mejorada */
+textarea.form-input-tareas {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Philosopher', sans-serif;
+}
+
+/* Checkboxes para etiquetas mejorados */
+.form-group-tareas label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #A8DCA6;
+    cursor: pointer;
+}
+
+.form-group-tareas label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-group-tareas label:has(input[type="checkbox"]):hover {
+    background-color: rgba(199, 238, 197, 0.1);
+}
+
+/* Botón crear tarea rediseñado */
+.btn-crear-tarea {
+    width: 100%;
+    background: linear-gradient(135deg, #C7EEC5, #A8DCA6);
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-crear-tarea::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.btn-crear-tarea:hover::before {
+    left: 100%;
+}
+
+.btn-crear-tarea:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(199, 238, 197, 0.4);
+}
+
+/* Línea separadora moderna */
+.linea-separacion {
+    background: linear-gradient(to bottom, transparent, #A8DCA6, transparent);
+    width: 3px;
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(199, 238, 197, 0.3);
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+/* Sección lista de tareas mejorada */
+.listatare {
+    grid-area: 1 / 3 / 2 / 4;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 80px;
+    height: fit-content;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Título de lista mejorado */
+.titulo-derecha-tareas {
+    font-family: 'Philosopher', sans-serif;
+    color: #A8DCA6;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 25px 0;
+    font-weight: 700;
+    position: relative;
+}
+
+.titulo-derecha-tareas::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #C7EEC5, #A8DCA6);
+    border-radius: 2px;
+}
+
+/* Lista de tareas modernizada */
+.listatare ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-tareas-derecha {
+    background: rgba(199, 238, 197, 0.1);
+    border: none;
+    border-left: 4px solid #A8DCA6;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 0 15px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.lista-tareas-derecha::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(199, 238, 197, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.lista-tareas-derecha:hover::before {
+    transform: translateX(0);
+}
+
+.lista-tareas-derecha:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(199, 238, 197, 0.2);
+}
+
+.lista-tareas-derecha strong {
+    flex-grow: 1;
+    margin-right: 15px;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+/* Iconos de acciones mejorados */
+.lista-tareas-derecha a {
+    margin: 0 5px;
+    padding: 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.lista-tareas-derecha a:hover {
+    background-color: rgba(168, 220, 166, 0.2);
+    transform: scale(1.1);
+}
+
+.crud-proyectos {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease;
+}
+
+/* Scrollbar personalizada para la lista */
+.listatare::-webkit-scrollbar {
+    width: 6px;
+}
+
+.listatare::-webkit-scrollbar-track {
+    background: rgba(168, 220, 166, 0.1);
+    border-radius: 10px;
+}
+
+.listatare::-webkit-scrollbar-thumb {
+    background: var(--color-verde-oscuro);
+    border-radius: 10px;
+}
+
+.listatare::-webkit-scrollbar-thumb:hover {
+    background: var(--color-verde-claro);
+}
+
+/* Formulario de edición mejorado */
+.form-container-tareas h3 {
+    color: var(--color-verde-oscuro);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* Animaciones suaves */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.creartareas,
+.listatare {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    #tareas-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        width: calc(100vw - 50px);
+        margin-left: 25px;
+    }
+    
+    .creartareas {
+        grid-area: 1 / 1 / 2 / 2;
+        margin-bottom: 20px;
+    }
+    
+    .listatare {
+        grid-area: 2 / 1 / 3 / 2;
+        margin-top: 0;
+    }
+    
+    .linea-separacion {
+        display: none;
+    }
+}
+
+/* Micro-interacciones para mejorar UX */
+.form-input-tareas:focus + label,
+.form-input-tareas:not(:placeholder-shown) + label {
+    color: var(--color-verde-oscuro);
+    font-weight: 700;
+}
+
+/* Estados de prioridad con colores verdes */
+.priority-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.priority-low { background-color: var(--color-verde-claro); }
+.priority-medium { background-color: var(--color-verde-oscuro); }
+.priority-high { background-color: #2d5a2b; }
+.priority-urgent { background-color: #1a3319; }
+
+ /* Fondo principal con gradiente rosado elegante */
+.task-view-body {
+    font-family: 'Philosopher', sans-serif;
+    background: linear-gradient(135deg, #F0C6D8 0%, #e8b5cc 50%, #dfa4c0 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Sección principal ajustada para sidebar izquierda */
+.task-view-body .right-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 30px;
+    margin: 20px;
+    width: calc(100vw - 360px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(240, 198, 216, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+/* Título principal de la tarea */
+.titulo-ver-tareas {
+    color: #ee94bb;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    line-height: 1.2;
+}
+
+/* Grid container rediseñado */
+.task-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+/* Secciones de tarea modernizadas */
+.task-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(240, 198, 216, 0.15);
+    border: 1px solid rgba(240, 198, 216, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.task-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #F0C6D8, #ee94bb);
+    border-radius: 20px 20px 0 0;
+}
+
+.task-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(240, 198, 216, 0.25);
+}
+
+/* Títulos de secciones */
+.detalles-tareas-titulos {
+    font-family: 'Philosopher', sans-serif;
+    color: #ee94bb;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    position: relative;
+}
+
+.detalles-tareas-titulos::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #F0C6D8, #ee94bb);
+}
+
+/* Párrafos de información */
+.task-section p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.descripcion-tarea {
+    color: #e2a9c1;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* Formularios mejorados */
+.task-section form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(240, 198, 216, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(240, 198, 216, 0.2);
+}
+
+/* Inputs mejorados */
+.input-subtareas,
+.task-section .form-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid rgba(240, 198, 216, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.input-subtareas:focus,
+.task-section .form-input:focus {
+    border-color: #ee94bb;
+    box-shadow: 0 0 0 3px rgba(238, 148, 187, 0.15);
+    transform: translateY(-1px);
+}
+
+.input-subtareas::placeholder,
+.task-section .form-input::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+/* Botón crear subtarea */
+.crear-subtarea-icon {
+    background: linear-gradient(135deg, #F0C6D8, #ee94bb);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(240, 198, 216, 0.3);
+}
+
+.crear-subtarea-icon:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 16px rgba(240, 198, 216, 0.4);
+}
+
+.crear-subtarea-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+/* Listas mejoradas */
+.task-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-section li {
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 0 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 3px solid #ee94bb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.task-section li:hover {
+    background: rgba(240, 198, 216, 0.1);
+    transform: translateX(5px);
+}
+
+/* Checkboxes modernos */
+.checkbox-subtarea {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ee94bb;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-subtarea:checked {
+    background: #ee94bb;
+    border-color: #ee94bb;
+}
+
+.checkbox-subtarea:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Iconos de eliminar */
+.icons-eliminar-subtarea {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.icons-eliminar-subtarea:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    filter: hue-rotate(15deg);
+}
+
+/* Botones mejorados */
+.task-section .login-btn {
+    background: linear-gradient(135deg, #F0C6D8, #ee94bb);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.task-section .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240, 198, 216, 0.3);
+}
+
+/* Sección completa para archivos adjuntos */
+.task-section.full-width-section {
+    grid-column: 1 / -1;
+}
+
+/* Enlaces de archivos */
+.task-section a {
+    color: #ee94bb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.task-section a:hover {
+    color: #e2a9c1;
+    text-decoration: underline;
+}
+
+/* Formulario de archivos */
+.task-section form[enctype="multipart/form-data"] {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(240, 198, 216, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px dashed rgba(240, 198, 216, 0.3);
+}
+
+.task-section input[type="file"] {
+    padding: 10px;
+    border: 1px solid rgba(240, 198, 216, 0.3);
+    border-radius: 8px;
+    background: white;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.task-section button[type="submit"] {
+    background: linear-gradient(135deg, #ee94bb, #e2a9c1);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.task-section button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(238, 148, 187, 0.3);
+}
+
+/* Estados especiales */
+.task-completed {
+    opacity: 0.7;
+}
+
+.task-completed .task-section::before {
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.task-urgent {
+    animation: urgentPulse 2s infinite;
+}
+
+@keyframes urgentPulse {
+    0%, 100% {
+        box-shadow: 0 10px 25px rgba(240, 198, 216, 0.15);
+    }
+    50% {
+        box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+    }
+}
+
+/* Scrollbar personalizada */
+.task-view-body .right-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.task-view-body .right-section::-webkit-scrollbar-track {
+    background: rgba(240, 198, 216, 0.1);
+    border-radius: 10px;
+}
+
+.task-view-body .right-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #F0C6D8, #ee94bb);
+    border-radius: 10px;
+}
+
+.task-view-body .right-section::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ee94bb, #e2a9c1);
+}
+
+/* Fondo principal con gradiente amarillo moderno */
+.body-ver-tags {
+    font-family: 'Philosopher', sans-serif;
+    background: linear-gradient(135deg, #FCF5C1 0%, #f8c982 50%, #f3ec9c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+}
+
+/* Sección principal rediseñada - ajustada para sidebar izquierda */
+.body-ver-tags .right-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 40px;
+    margin: 20px;
+    width: calc(80vw - 360px); /* Ajustado para sidebar de 320px + margen */
+    margin-left: 50px; /* Espacio para la sidebar */
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(248, 201, 130, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-height: calc(100vh - 40px);
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Título principal mejorado */
+.titulos-tags {
+    font-family: 'Philosopher', sans-serif;
+    color: #f8c982;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+
+
+/* Formulario principal mejorado */
+.form-container-tags {
+    background: rgba(252, 245, 193, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(248, 201, 130, 0.2);
+    box-shadow: 0 8px 25px rgba(248, 201, 130, 0.1);
+}
+
+.form-group-tags {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Input mejorado con efectos modernos */
+.form-input-tags {
+    width: 100%;
+    padding: 18px 25px;
+    border: 2px solid rgba(248, 201, 130, 0.3);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Philosopher', sans-serif;
+    text-align: left;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.form-input-tags:focus {
+    border-color: #f8c982;
+    box-shadow: 
+        0 0 0 4px rgba(248, 201, 130, 0.15),
+        inset 0 2px 4px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 1);
+}
+
+.form-input-tags::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+/* Botón crear etiqueta rediseñado */
+.crear-tag {
+    width: 100%;
+    background: linear-gradient(135deg, #f8c982, #f3ec9c);
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Philosopher', sans-serif;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(248, 201, 130, 0.3);
+}
+
+.crear-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.crear-tag:hover::before {
+    left: 100%;
+}
+
+.crear-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(248, 201, 130, 0.4);
+}
+
+.crear-tag:active {
+    transform: translateY(-1px);
+}
+
+/* Título de lista mejorado */
+.logo-text {
+    color: #f8c982;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 30px 0 25px 0;
+    position: relative;
+    font-family: 'Philosopher', sans-serif;
+}
+
+
+
+/* Lista de etiquetas modernizada */
+.body-ver-tags ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.body-ver-tags li {
+    background: rgba(255, 255, 255, 0.8);
+    margin: 0 0 15px 0;
+    padding: 20px 25px;
+    border: none;
+    border-radius: 15px;
+    border-left: 4px solid #f8c982;
+    box-shadow: 0 5px 15px rgba(248, 201, 130, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.body-ver-tags li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(252, 245, 193, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.body-ver-tags li:hover::before {
+    transform: translateX(0);
+}
+
+.body-ver-tags li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 10px 25px rgba(248, 201, 130, 0.2);
+    border-left-color: #f3ec9c;
+}
+
+.body-ver-tags li strong {
+    flex-grow: 1;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+/* Contenedor de acciones */
+.tag-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Botones de acción rediseñados */
+.body-ver-tags .btn-login,
+.body-ver-tags .btn-registro {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.body-ver-tags .btn-login {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.body-ver-tags .btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.3);
+}
+
+.body-ver-tags .btn-registro {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    color: white;
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.2);
+}
+
+.body-ver-tags .btn-registro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(244, 67, 54, 0.3);
+}
+
+/* Efectos shimmer para botones */
+.body-ver-tags .btn-login::before,
+.body-ver-tags .btn-registro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.body-ver-tags .btn-login:hover::before,
+.body-ver-tags .btn-registro:hover::before {
+    left: 100%;
+}
+
+/* Formulario de edición mejorado */
+.body-ver-tags .form-container-tags:last-child {
+    background: rgba(252, 245, 193, 0.15);
+    border: 2px dashed rgba(248, 201, 130, 0.3);
+    position: relative;
+}
+
+.body-ver-tags .form-container-tags:last-child::before {
+    content: '✏️';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: white;
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+/* Scroll personalizado */
+.body-ver-tags .right-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.body-ver-tags .right-section::-webkit-scrollbar-track {
+    background: rgba(252, 245, 193, 0.2);
+    border-radius: 10px;
+}
+
+.body-ver-tags .right-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #f8c982, #f3ec9c);
+    border-radius: 10px;
+}
+
+.body-ver-tags .right-section::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #f3ec9c, #f8c982);
+}
+
+/* Estados vacíos */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-style: italic;
+}
+
+.empty-state::before {
+    content: '🏷️';
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .body-ver-tags .right-section {
+        margin: 20px 10px;
+        padding: 30px 20px;
+        width: calc(100% - 20px);
+    }
+    
+    .titulos-tags {
+        font-size: 2.5rem;
+    }
+    
+    .body-ver-tags li {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .tag-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Micro-animaciones */
+@keyframes tagPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.body-ver-tags li:active {
+    animation: tagPulse 0.2s ease;
+}
+
+/* Efectos de loading */
+.loading-tag {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Iconos decorativos para diferentes tipos de etiquetas */
+.tag-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.tag-work::before { content: '💼'; }
+.tag-personal::before { content: '🏠'; }
+.tag-urgent::before { content: '🚨'; }
+.tag-idea::before { content: '💡'; }
+
+
+
+
+
+/* Iconos decorativos para diferentes tipos de etiquetas */
+.tag-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+
+
+ #file-upload {
+     display: none;
+ }
+
+ #btn-selec-file {
+     display: flex;
+     background-color: var(--color-celeste);
+     width: 15%;
+     color: white;
+     height: 45px;
+     border-radius: 25px;
+     cursor: pointer;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+     font-family: 'Philosopher', sans-serif;
+
+ }
+ .btn-acualizar-avatar{
+    display: flex;
+    justify-content: center;
+ }
+ .btn-actualizar{
+    width: 35%;
+    background: linear-gradient(135deg, #7fb3d3, #a8c8ec);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    justify-content: center;
+ }
+ /*Estilos del buscador*/
+ .main-buscador{
+    background: var(--color-rosado);
+     flex: 1;
+     border-radius: 15px;
+     height: 100vh;
+     flex-wrap: wrap;
+     overflow: scroll;
+     display: flex;
+     justify-content: center;
+ }
+.form-container-buscador,
+.resultados-busquedad{
+display: flex;
+flex-direction: column;
+background-color: var(--color-cremita);
+width: 50vw;
+height: 67vh;
+border-radius: 25px;
+align-items:center ;
+flex-wrap: wrap;
+justify-content: center;
+margin-bottom: 30px;
+}
+
+.btn-filtarYLimpiar,
+.btn-filtarYLimpiar a {
+    width: 50%;
+    background: var(--color-rosa-fuerte);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+border-radius: 20px;
+cursor: pointer;
+transition: all 0.3s ease;
+text-decoration: none;
+font-size: 14px;
+    margin-top: auto;
+    display: block;
+    text-align: center;
+}
+.sub-filter{
+    width: 60%;
+    display: flex;
+}
+#input-buscador,
+#main-filter {
+    width: 60%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 2px solid #e1e8ed;
+    background: transparent;
+    font-size: 16px;
+    color: #2c3e50;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#input-buscador:focus,
+#main-filter:focus {
+    border-color: var(--color-rosa-fuerte);
+}
+
+/*RESULTADOS BUSQUEDAD */
+/* Contenedor principal de la sección de resultados */
+.seccion-resultados-busqueda {
+    background-color: #f7f9fb;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título de la sección */
+.titulo-resultados {
+    font-size: 28px;
+    font-weight: 700;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Estilos de la lista de tareas */
+.lista-resultados-tareas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para cada "tarjeta" de tarea */
+.tarjeta-tarea-resultado {
+    background-color: #ffffff;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-tarea-resultado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos del encabezado de cada tarjeta (título y meta-información) */
+.encabezado-tarea-resultado {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Estilos para el enlace del título de la tarea */
+.enlace-tarea-titulo {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--color-rosa-fuerte);
+    text-decoration: none;
+    transition: color 0.2s;
+    flex-grow: 1; /* Permite que ocupe el espacio restante */
+    margin-right: 15px; /* Espacio entre el título y el meta */
+}
+
+.enlace-tarea-titulo:hover {
+    color: var(--color-rosado);
+}
+
+/* Contenedor de estado, prioridad y proyecto */
+.meta-tarea-resultado {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilos para las etiquetas de estado y prioridad */
+.estado-tarea-badge, .prioridad-tarea-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+.prioridad-tarea-badge.baja {
+  background-color: #7f8c8d; /* Gris para baja */
+  color: #fff;
+}
+/* Estilos para el listado de etiquetas */
+.etiquetas-tarea-listado {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #555;
+}
+
+.icono-info-pequeno {
+    width: 16px;
+    margin-right: 5px;
+}
+.estado-tarea-badge, .prioridad-tarea-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #fff; 
+    text-transform: uppercase;
+}
+
+/* Colores para los estados de tarea */
+.estado-tarea-badge.por-hacer {
+    background-color: #f39c12; /* Naranja para "Por hacer" */
+    color: #fff;
+}
+
+.estado-tarea-badge.en-progreso {
+    background-color: #3498db; /* Azul para "En progreso" */
+    color: #fff;
+}
+
+.estado-tarea-badge.completada {
+    background-color: #2ecc71; /* Verde para "Hecha" */
+    color: #fff;
+}
+
+.estado-tarea-badge.archivada {
+    background-color: #95a5a6; /* Gris para "Archivada" */
+    color: #fff;
+}
+
+/* Colores para las prioridades */
+.prioridad-tarea-badge.alta {
+  background-color: #f1c40f; /* Naranja/Amarillo */
+  color: #fff;
+}
+.prioridad-tarea-badge.media {
+  background-color: #3498db; /* Azul */
+  color: #fff;
+}
+.prioridad-tarea-badge.urgente {
+  background-color: #e74c3c; /* Rojo */
+  color: #fff;
+}
+.proyecto-tarea-info {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+}
+.icono-info {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+/* =================================
+   MODAL EDITAR TAREA - STYLES
+================================= */
+
+/* Modal Editar Tarea - Overlay */
+.modal-overlay-editar-tarea {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay-editar-tarea.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Editar Tarea - Container */
+.contenedor-modal-editar-tarea {
+    background: var(--color-cremita);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(45, 80, 22, 0.1);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    transform: scale(0.8) translateY(50px);
+    transition: all 0.3s ease;
+    border: 3px solid var(--color-verde-claro);
+}
+
+.modal-overlay-editar-tarea.activo .contenedor-modal-editar-tarea {
+    transform: scale(1) translateY(0);
+}
+
+/* Modal Editar Tarea - Header */
+.header-modal-editar-tarea {
+    background: linear-gradient(135deg, var(--color-verde-claro), var(--color-verde-oscuro));
+    padding: 25px 30px;
+    border-bottom: 2px solid var(--color-verde-oscuro);
+    position: relative;
+}
+
+.titulo-modal-editar-tarea {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-cerrar-modal-editar-tarea {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #2d5016;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.btn-cerrar-modal-editar-tarea:hover {
+    background: var(--color-cremita);
+    transform: rotate(90deg);
+}
+
+/* Modal Editar Tarea - Body */
+.body-modal-editar-tarea {
+    padding: 30px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.body-modal-editar-tarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+.body-modal-editar-tarea::-webkit-scrollbar-track {
+    background: var(--color-cremita);
+}
+
+.body-modal-editar-tarea::-webkit-scrollbar-thumb {
+    background: var(--color-verde-oscuro);
+    border-radius: 3px;
+}
+
+/* Form Editar Tarea - Styles */
+.formulario-editar-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-input-editar-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fila-inputs-editar-tarea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.label-editar-tarea {
+    font-weight: 500;
+    color: #2d5016;
+    font-size: 0.95rem;
+}
+
+.input-editar-tarea,
+.select-editar-tarea,
+.textarea-editar-tarea {
+    padding: 12px 15px;
+    border: 2px solid var(--color-verde-claro);
+    border-radius: 12px;
+    background: white;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    outline: none;
+    font-family: inherit;
+}
+
+.input-editar-tarea:focus,
+.select-editar-tarea:focus,
+.textarea-editar-tarea:focus {
+    border-color: var(--color-verde-oscuro);
+    box-shadow: 0 0 0 3px rgba(168, 220, 166, 0.2);
+}
+
+.textarea-editar-tarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+/* Checkbox Editar Tarea - Styles */
+.grupo-checkboxes-editar-tarea {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.item-checkbox-editar-tarea {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--color-verde-claro);
+    transition: all 0.2s ease;
+}
+
+.item-checkbox-editar-tarea:hover {
+    background: var(--color-verde-claro);
+}
+
+.checkbox-editar-tarea {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-verde-oscuro);
+}
+
+.label-checkbox-editar-tarea {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* Botones Editar Tarea - Styles */
+.grupo-botones-editar-tarea {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--color-verde-claro);
+}
+
+.btn-guardar-editar-tarea {
+    background: linear-gradient(135deg, var(--color-verde-oscuro), var(--color-verde-claro));
+    color: #2d5016;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(168, 220, 166, 0.3);
+}
+
+.btn-guardar-editar-tarea:hover {
+    background: linear-gradient(135deg, #96d494, var(--color-verde-oscuro));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(168, 220, 166, 0.4);
+}
+
+.btn-cancelar-editar-tarea {
+    background: transparent;
+    color: #2d5016;
+    border: 2px solid var(--color-verde-claro);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancelar-editar-tarea:hover {
+    background: var(--color-verde-claro);
+}
+
+/* Responsive para Modal Editar Tarea */
+@media (max-width: 768px) {
+    .contenedor-modal-editar-tarea {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .fila-inputs-editar-tarea {
+        grid-template-columns: 1fr;
+    }
+    
+    .grupo-checkboxes-editar-tarea {
+        grid-template-columns: 1fr;
+    }
+    
+    .grupo-botones-editar-tarea {
+        flex-direction: column;
+    }
+}
+
+/* =================================
+   PROYECTOS - TEMA MORADO MEJORADO
+================================= */
+
+:root {
+    --color-morado-principal: #B19CD9;
+    --color-morado-claro: #E8D8F5;
+    --color-morado-oscuro: #9A7BB0;
+    --color-morado-suave: #F3EBFF;
+    --color-rosa-suave: #F8B4D9;
+    --color-texto-morado: #6B46C1;
+    --color-blanco: #ffffff;
+    --color-gris-claro: #F8FAFC;
+    --color-sombra-morada: rgba(139, 92, 246, 0.1);
+}
+
+/* Contenedor principal de proyectos */
+.main-proyectos {
+    background: linear-gradient(135deg, var(--color-morado-suave), var(--color-morado-claro));
+    min-height: 100vh;
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header de la página */
+.page-header {
+    margin-bottom: 30px;
+}
+
+.titulos-main {
+    color: var(--color-texto-morado);
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(107, 70, 193, 0.1);
+}
+
+.icons-sidebar {
+    width: 40px;
+    height: 40px;
+    filter: hue-rotate(240deg) saturate(1.2);
+}
+
+/* Lista de proyectos */
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Tarjetas de proyectos */
+.project-item {
+    background: var(--color-blanco);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 25px var(--color-sombra-morada);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-morado-principal), var(--color-rosa-suave));
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.15);
+    border-color: var(--color-morado-principal);
+}
+
+/* Contenido del proyecto */
+.project-content {
+    margin-bottom: 20px;
+}
+
+.project-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.project-icon h3 {
+    color: var(--color-texto-morado);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.icons-lista-proyectos {
+    width: 32px;
+    height: 32px;
+    filter: hue-rotate(240deg) saturate(1.5) brightness(1.1);
+}
+
+.project-info {
+    margin-top: 10px;
+}
+
+.descripcion-proyecto {
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Acciones del proyecto */
+.project-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-crud-proyectos {
+    background: var(--color-morado-suave);
+    border: 2px solid var(--color-morado-claro);
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-crud-proyectos:hover {
+    background: var(--color-morado-principal);
+    border-color: var(--color-morado-oscuro);
+    transform: scale(1.05);
+}
+
+.crud-proyectos {
+    width: 20px;
+    height: 20px;
+    filter: hue-rotate(240deg) saturate(1.3);
+}
+
+/* Línea decorativa */
+.project-star-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-morado-principal), transparent);
+    margin: 30px 0;
+    border-radius: 1px;
+}
+
+/* Botón agregar proyecto */
+.add-project-btn {
+    background: linear-gradient(135deg, var(--color-morado-principal), var(--color-rosa-suave));
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 20px;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.add-project-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, var(--color-morado-oscuro), var(--color-morado-principal));
+}
+
+.add-project-icon img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* Modal Crear Proyecto */
+.modal-crear-proyecto {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 92, 246, 0.1);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.modal-crear-proyecto.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+/* Modal Editar Proyecto */
+.modal-editar-proyecto {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 92, 246, 0.1);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.modal-editar-proyecto.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+/* Contenido común de modales proyectos */
+.contenido-modal-proyecto {
+    background: var(--color-blanco);
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--color-morado-claro);
+}
+
+.modal-crear-proyecto.show .contenido-modal-proyecto,
+.modal-editar-proyecto.show .contenido-modal-proyecto {
+    transform: scale(1) translateY(0);
+}
+
+/* Header específico para modales de proyectos */
+.header-modal-proyecto {
+    background: linear-gradient(135deg, var(--color-morado-principal), var(--color-morado-claro));
+    padding: 25px 30px;
+    border-bottom: 2px solid var(--color-morado-oscuro);
+    position: relative;
+}
+
+.titulo-modal-proyecto {
+    color: var(--color-blanco);
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn-cerrar-modal-proyecto {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-blanco);
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.btn-cerrar-modal-proyecto:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Formularios en modales de proyectos */
+.formulario-crear-proyecto,
+.formulario-editar-proyecto {
+    padding: 30px;
+}
+
+.grupo-input-proyecto {
+    margin-bottom: 20px;
+}
+
+.input-proyecto,
+.textarea-proyecto {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--color-morado-claro);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    outline: none;
+    font-family: inherit;
+    background: var(--color-gris-claro);
+}
+
+.input-proyecto:focus,
+.textarea-proyecto:focus {
+    border-color: var(--color-morado-principal);
+    background: var(--color-blanco);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.input-proyecto::placeholder,
+.textarea-proyecto::placeholder {
+    color: #9CA3AF;
+}
+
+.textarea-proyecto {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Acciones de formularios de proyectos */
+.acciones-formulario-proyecto {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--color-morado-claro);
+}
+
+.btn-proyecto {
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    outline: none;
+}
+
+.btn-secundario-proyecto {
+    background: transparent;
+    color: var(--color-texto-morado);
+    border: 2px solid var(--color-morado-claro);
+}
+
+.btn-secundario-proyecto:hover {
+    background: var(--color-morado-claro);
+}
+
+.btn-primario-proyecto {
+    background: linear-gradient(135deg, var(--color-morado-principal), var(--color-rosa-suave));
+    color: var(--color-blanco);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primario-proyecto:hover {
+    background: linear-gradient(135deg, var(--color-morado-oscuro), var(--color-morado-principal));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Responsive para proyectos */
+@media (max-width: 768px) {
+    .main-proyectos {
+        padding: 20px 15px;
+    }
+    
+    .projects-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-item {
+        padding: 20px;
+    }
+    
+    .project-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .btn-crud-proyectos {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .add-project-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .titulos-main {
+        font-size: 1.8rem;
+    }
+    
+    .acciones-formulario-proyecto {
+        flex-direction: column;
+    }
+}
+
+/* Estados especiales */
+.project-item.favorito::before {
+    background: linear-gradient(90deg, #FFD700, var(--color-rosa-suave));
+}
+
+.btn-crud-proyectos.active {
+    background: var(--color-rosa-suave);
+    border-color: var(--color-morado-principal);
+}
+
+/* Animaciones adicionales */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.add-project-btn {
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.add-project-btn:hover {
+    animation: none;
+}
+/* =================================
+   BUSCADOR - DISEÑO 
+================================= */
+
+/* Variables con tus colores específicos */
+:root {
+    --color-rosa-fuerte: #ff7eb6;
+    --color-rosado: #F0C6D8;
+    --blanco: #ffffff;
+    --gris-claro: #f8f9fa;
+    --gris: #6b7280;
+    --texto-oscuro: #2d3748;
+}
+
+/* Contenedor principal - Fondo degradado sutil */
+.main-buscador {
+    background: linear-gradient(135deg, #fef7f0 0%, var(--color-rosado) 100%);
+    min-height: 100vh;
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Contenedor de búsqueda - Más limpio */
+.projects-list {
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #e5e5e5;
+    max-width: 100%;
+}
+
+.boton-registro-login-left {
+    width: 100%;
+}
+
+/* Formulario bonito */
+.form-container-buscador {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+/* Inputs más simples */
+#input-buscador,
+.form-input {
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: var(--blanco);
+    color: var(--texto-oscuro);
+    width: 60%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+#input-buscador:focus,
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-rosa-fuerte);
+}
+
+#input-buscador::placeholder,
+.form-input::placeholder {
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+/* Select principal más simple */
+#main-filter {
+    background: var(--color-rosa-fuerte);
+    color: var(--blanco);
+    font-weight: 500;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#main-filter:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 126, 182, 0.4);
+}
+
+/* Subfiltros simples */
+.sub-filter {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+/* Labels simples */
+.descripcion-tarea {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 14px;
+}
+
+/* Botones más simples */
+.btn-filtarYLimpiar {
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn-filtarYLimpiar[type="submit"] {
+    background: var(--color-rosa-fuerte);
+    color: var(--blanco);
+    border: none;
+}
+
+.btn-filtarYLimpiar:not([type="submit"]) {
+    background: var(--blanco);
+    color: var(--color-rosa-fuerte);
+    border: 1px solid var(--color-rosa-fuerte);
+}
+
+/* Sección de resultados elegante */
+.seccion-resultados-busqueda {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 28px;
+    border: 1px solid rgba(240, 198, 216, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 126, 182, 0.08);
+}
+
+.titulo-resultados {
+    color: var(--color-rosa-fuerte);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-rosado);
+}
+
+/* Lista bonita */
+.lista-resultados-tareas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tarjeta-tarea-resultado {
+    background: linear-gradient(135deg, var(--blanco), rgba(240, 198, 216, 0.05));
+    border: 1px solid rgba(240, 198, 216, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.tarjeta-tarea-resultado:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 126, 182, 0.15);
+    border-color: var(--color-rosa-fuerte);
+}
+
+.tarjeta-tarea-resultado::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--color-rosa-fuerte);
+    border-radius: 10px 0 0 10px;
+}
+
+/* Encabezado elegante */
+.encabezado-tarea-resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.enlace-tarea-titulo {
+    color: var(--texto-oscuro);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    flex: 1;
+    transition: color 0.2s ease;
+}
+
+.enlace-tarea-titulo:hover {
+    color: var(--color-rosa-fuerte);
+}
+
+/* Meta información bonita */
+.meta-tarea-resultado {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Badges hermosos */
+.estado-tarea-badge,
+.prioridad-tarea-badge {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+/* Estados con tus colores */
+.estado-tarea-badge.por-hacer {
+    background: rgba(240, 198, 216, 0.3);
+    color: var(--color-rosa-fuerte);
+}
+
+.estado-tarea-badge.en-progreso {
+    background: var(--color-rosado);
+    color: var(--color-rosa-fuerte);
+}
+
+.estado-tarea-badge.completada {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.estado-tarea-badge.archivada {
+    background: #f3f4f6;
+    color: var(--gris);
+}
+
+/* Prioridades bonitas */
+.prioridad-tarea-badge.baja {
+    background: #f8f9fa;
+    color: var(--gris);
+}
+
+.prioridad-tarea-badge.media {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.prioridad-tarea-badge.alta {
+    background: #ffeaa7;
+    color: #d68910;
+}
+
+.prioridad-tarea-badge.urgente {
+    background: var(--color-rosa-fuerte);
+    color: var(--blanco);
+}
+
+/* Información elegante */
+.proyecto-tarea-info,
+.asignado-a-usuario,
+.etiquetas-tarea-listado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-rosa-fuerte);
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.etiquetas-tarea-listado {
+    font-style: italic;
+    color: var(--gris);
+}
+
+/* Iconos bonitos */
+.icono-info,
+.icono-info-pequeno {
+    width: 16px;
+    height: 16px;
+    filter: hue-rotate(320deg) saturate(1.2);
+    opacity: 0.8;
+}
+
+.icono-info-pequeno {
+    width: 14px;
+    height: 14px;
+}
+
+/* Responsive elegante */
+@media (max-width: 768px) {
+    .main-buscador {
+        padding: 16px;
+    }
+    
+    .projects-list,
+    .seccion-resultados-busqueda {
+        padding: 20px;
+    }
+    
+    .encabezado-tarea-resultado {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-filtarYLimpiar {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+
+/* Estado vacío bonito */
+.lista-resultados-tareas:empty::after {
+    content: "✨ No se encontraron resultados";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    color: var(--color-rosado);
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* Prevenir overflow */
+.main-buscador,
+.projects-list,
+.seccion-resultados-busqueda {
+    overflow-x: hidden;
+}
+
+/* Fechas en desktop */
+@media (min-width: 769px) {
+    #filter-fecha {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    #filter-fecha .descripcion-tarea {
+        grid-column: 1 / -1;
+    }
+}

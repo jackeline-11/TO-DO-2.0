@@ -37,7 +37,7 @@ $usuarioSidebar = $stmt->fetch(PDO::FETCH_ASSOC);
                         alt="Avatar" 
                         style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></a>
                 <?php else: ?>
-                    <a href="perfil.php"><img src="../assets/img/default-avatar.png" 
+                    <a href="perfil.php"><img src="../assets/css/img/iconperfil.png" 
                         alt="Avatar" 
                         style="width:80px;height:80px;border-radius:50%;object-fit:cover;"></a>
                 <?php endif; ?>

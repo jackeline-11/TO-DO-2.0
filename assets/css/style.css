@@ -3211,14 +3211,8 @@ font-size: 14px;
 }
 
 /* Animaciones adicionales */
-@keyframes flotar {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-}
 
-.add-project-btn {
-    animation: flotar 3s ease-in-out infinite;
-}
+
 
 .add-project-btn:hover {
     animation: none;
@@ -3576,3 +3570,27 @@ font-size: 14px;
         grid-column: 1 / -1;
     }
 }
+/* Estrellas */
+    .estrella {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      opacity: 0.8;
+      animation: flotar linear infinite, brillar ease-in-out infinite alternate;
+    }
+
+    .estrella svg {
+      width: 100%;
+      height: 100%;
+      fill: white;
+    }
+
+    @keyframes flotar {
+      from { transform: translateY(110vh) rotate(0deg); }
+      to   { transform: translateY(-120vh) rotate(360deg); }
+    }
+
+    @keyframes brillar {
+      from { opacity: 0.3; }
+      to   { opacity: 1; }
+    }
